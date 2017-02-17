@@ -3,6 +3,11 @@ fs = require 'fs-extra'
 path = require 'path'
 resemble = require 'node-resemble-js'
 
+resemble.outputSettings {
+  largeImageThreshold: 0
+  transparency: true
+}
+
 SRC = path.join __dirname, "source.jpg"
 COMPARE = path.join __dirname, "comparisons"
 QUALITY = path.join COMPARE, "quality"
@@ -26,6 +31,7 @@ fs.emptyDir QUALITY, (err)->
           console.log "Compressed #{i}."
           resemble SRC
           .compareTo quality
+          .ignoreNothing()
           .onComplete (data)->
             console.log "Compared #{i}."
             data.getDiffImage().pack().pipe cmp
