@@ -5,7 +5,7 @@ A quick comparison of the mozjpeg compression with differing quality.
 To setup, clone this repo and install the dependencies.
 
 ```
-git clone
+git clone https://github.com/internetimagery/mozjpeg-compare.git
 npm install
 ```
 
