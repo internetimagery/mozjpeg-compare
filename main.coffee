@@ -12,8 +12,6 @@ fs.emptyDir QUALITY, (err)->
   return console.error err if err
   fs.emptyDir DIFF, (err)->
     return console.error err if err
-    return
-
     for i in [1 .. 10]
       i = i**2
       do (i)->
